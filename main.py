@@ -48,10 +48,10 @@ def vintage(chemin_image, intensite):
     image = Image.blend(image, filtre_jaune, facteur_intensite * 0.3) #On melange les deux images pour appliquer sur l'image de depart
     px = image.load()
     width, height = image.size
-    for i in range(int(width * height * facteur_intensite * 0.05)):  # On cree un bruit en modifiant la couleur de facon aleatoire
+    for i in range(int(width * height * facteur_intensite * 0.5)):  # On cree un bruit en modifiant la couleur de facon aleatoire
         x, y = randint(0, width - 1), randint(0, height - 1)
         r, g, b = px[x, y]
-        bruit = randint(-30, 30)  # On varie la couleur de facon aleatoire
+        bruit = randint(-10, 10)  # On varie la couleur de facon aleatoire
         px[x, y] = (max(0, min(255, r + bruit)),
                         max(0, min(255, g + bruit)),
                         max(0, min(255, b + bruit)))
